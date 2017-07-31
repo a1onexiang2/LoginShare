@@ -1,7 +1,7 @@
 package com.vpngo.speed
 
 import android.app.Application
-import com.lez.loginshare.LoginShare
+import com.neilzheng.loginshare.LoginShare
 
 /**
  * Created by Neil Zheng on 2017/7/25.

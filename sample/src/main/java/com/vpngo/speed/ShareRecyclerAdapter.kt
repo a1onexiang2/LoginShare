@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.SparseBooleanArray
 import android.view.View
 import android.view.ViewGroup
-import com.lez.loginshare.share.SharePlatform
+import com.neilzheng.loginshare.share.SharePlatform
 
 /**
  * Created by Neil Zheng on 2017/6/26.

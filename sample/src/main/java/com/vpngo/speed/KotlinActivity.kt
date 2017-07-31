@@ -6,11 +6,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.util.Log
-import com.lez.loginshare.LoginShare
-import com.lez.loginshare.login.*
-import com.lez.loginshare.share.*
-import com.lez.loginshare.utils.logD
-import com.lez.loginshare.utils.logE
+import com.neilzheng.loginshare.LoginShare
+import com.neilzheng.loginshare.login.*
+import com.neilzheng.loginshare.share.*
+import com.neilzheng.loginshare.utils.logD
+import com.neilzheng.loginshare.utils.logE
 import kotlinx.android.synthetic.main.activity_demo.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

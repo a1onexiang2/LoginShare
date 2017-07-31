@@ -1,8 +1,8 @@
 package com.vpngo.speed;
 
-import com.lez.loginshare.share.BaseStyle;
-import com.lez.loginshare.share.ShareConfig;
-import com.lez.loginshare.share.BaseShareDialog;
+import com.neilzheng.loginshare.share.BaseStyle;
+import com.neilzheng.loginshare.share.ShareConfig;
+import com.neilzheng.loginshare.share.BaseShareDialog;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,6 +1,6 @@
 package com.vpngo.speed.wxapi
 
-import com.lez.loginshare.widget.BaseWXEntryActivity
+import com.neilzheng.loginshare.widget.BaseWXEntryActivity
 
 /**
  * Created by Neil Zheng on 2017/7/26.

@@ -4,8 +4,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 
-import com.lez.loginshare.share.*;
-import com.lez.loginshare.share.ShareRecyclerAdapter;
+import com.neilzheng.loginshare.share.*;
+import com.neilzheng.loginshare.share.ShareRecyclerAdapter;
 
 /**
  * Created by Neil Zheng on 2017/7/31.
@@ -40,7 +40,7 @@ public class CustomShareDialog extends BaseShareDialog {
         final ShareRecyclerAdapter adapter =
                 new ShareRecyclerAdapter(config.getPlatformList());
         recyclerView.setAdapter(adapter);
-        adapter.setOnClickListener(new com.lez.loginshare.share.BaseViewHolder.onItemClickListener() {
+        adapter.setOnClickListener(new com.neilzheng.loginshare.share.BaseViewHolder.onItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 doShare(config.shareContent, adapter.getItem(position));
