@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">#20000000</item>
+    </style>
+
+    <style name="ShareDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="ShareDialog.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginRight">12dp</item>
+        <item name="android:textColor">@color/shareDialogTitle</item>
+    </style>
+
+    <style name="ShareDialog.Animation"/>
+
+    <style name="ShareDialog.Animation.Bottom">
+        <item name="android:windowEnterAnimation">@anim/show_dialog_share_bottom</item>
+        <item name="android:windowExitAnimation">@anim/dismiss_dialog_share_bottom</item>
+    </style>
+
+    <style name="ShareDialog.Bottom" parent="ShareDialog">
+        <item name="android:windowAnimationStyle">@style/ShareDialog.Animation.Bottom</item>
+    </style>
+
+    <style name="ShareDialog.Center" parent="ShareDialog"/>
+
+    <style name="ShareDialog.Dropdown" parent="ShareDialog">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="ShareDialog.Fullscreen" parent="ShareDialog"/>
+
+    <style name="SelectableItemTheme">
+        <item name="colorControlHighlight">@color/colorRipple</item>
+    </style>
+
+    <style name="rippleItem">
+        <item name="android:theme">@style/SelectableItemTheme</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+</resources>

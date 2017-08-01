@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LoginShare</string>
+    <string name="text_share_to">分享到</string>
+    <string name="text_login_qq_not_installed">手机未安装QQ，无法调用QQ登录</string>
+    <string name="text_login_wechat_not_installed">手机未安装微信，无法调用微信登录</string>
+    <string name="text_login_weibo_not_installed">手机未安装微博，无法调用微博登录</string>
+    <string name="text_share_qq_not_installed">手机未安装QQ，无法调用QQ分享</string>
+    <string name="text_share_wechat_not_installed">手机未安装微信，无法调用微信分享</string>
+    <string name="text_share_weibo_not_installed">手机未安装微博，无法调用微博分享</string>
+</resources>
