@@ -8,8 +8,8 @@ with Gradle:
 
 ```groovy
 dependencies {
-	compile 'com.neilzheng:LoginShare:0.1.0'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+	compile 'com.neilzheng:LoginShare:0.1.1'
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 ```
 
@@ -19,7 +19,7 @@ or with Maven:
 <dependency>
 	<groupId>com.neilzheng</groupId>
 	<artifactId>LoginShare</artifactId>
-	<version>0.1.0</version>
+	<version>0.1.1</version>
 	<type>pom</type>
 </dependency>
 ```
