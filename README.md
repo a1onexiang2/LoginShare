@@ -1,4 +1,4 @@
-	# LoginShare
+# LoginShare
 
 LoginShare is a fast and efficient open source sso manager and share manager for Android.
 
@@ -8,8 +8,8 @@ with Gradle:
 
 ```groovy
 dependencies {
-	compile 'com.neilzheng:LoginShare:0.1.0'
-	compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.neilzheng:LoginShare:0.1.0'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 ```
 
@@ -17,10 +17,10 @@ or with Maven:
 
 ```
 <dependency>
-	<groupId>com.neilzheng</groupId>
-	<artifactId>LoginShare</artifactId>
-	<version>0.1.0</version>
-	<type>pom</type>
+    <groupId>com.neilzheng</groupId>
+    <artifactId>LoginShare</artifactId>
+    <version>0.1.0</version>
+    <type>pom</type>
 </dependency>
 ```
 
@@ -32,10 +32,10 @@ Initilaze the LoginShare in your `Application.onCreate()` as codes following:
   
 ```java
 private void initSdk() {
-	LoginShare.init(this)
-	LoginShare.initQq("QQ_APP_KEY", "QQ_SECRET_KEY")
-	LoginShare.initWechat("WECHAT_KEY", "WECHAT_SECRET", "WECHAT_SCOPE", "WECHAT_STATE")
-	LoginShare.initWeibo("WEIBO_KEY", "WEIBO_SECRET", "WEIBO_CALLBACK_URL", "WEIBO_SCOPE")
+    LoginShare.init(this)
+    LoginShare.initQq("QQ_APP_KEY", "QQ_SECRET_KEY")
+    LoginShare.initWechat("WECHAT_KEY", "WECHAT_SECRET", "WECHAT_SCOPE", "WECHAT_STATE")
+    LoginShare.initWeibo("WEIBO_KEY", "WEIBO_SECRET", "WEIBO_CALLBACK_URL", "WEIBO_SCOPE")
 }
 ```
 
@@ -62,8 +62,8 @@ Secondary, override the `onAcitivtyResult(int requestCode, int resultCode, Inten
 ```java
 @Override
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-	super.onActivityResult(requestCode, resultCode, data)
-	LoginShare.onActivityResult(requestCode, resultCode, data)
+    super.onActivityResult(requestCode, resultCode, data)
+    LoginShare.onActivityResult(requestCode, resultCode, data)
 }
 ```
 
@@ -73,38 +73,38 @@ And the last step, get the sso data by the `EventBus` event in Activity like thi
 @Override
 protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-	EventBus.getDefault().register(this);
+    EventBus.getDefault().register(this);
 }
 
 @Override
 protected void onDestroy() {
-	super.onDestroy();
-	EventBus.getDefault().unregister(this);
+    super.onDestroy();
+    EventBus.getDefault().unregister(this);
 }
 
 @Subscribe(threadMode = ThreadMode.MAIN)
 public <T> void onEvent(final AuthEvent<T> event) {
     if (event.isSuccess()) {
-        T data = event.getData();
-        if (data instanceof Void) {
-            log.d(TAG, "some exception uncatched.");
-            return;
-        }
-        if (data instanceof QqAuthResult) {
-            //TODO handle the QqAuthResult
-        } else if (data instanceof WechatAuthResult) {
-            //TODO handle the WechatAuthResult
-        } else if (data instanceof WeiboAuthResult) {
-            //TODO handle the WeiboAuthResult
-        } else if (data instanceof QqUserInfoResult) {
-            //TODO handle the QqUserInfoResult
-        } else if (data instanceof WechatUserInfoResult) {
-            //TODO handle the WechatUserInfoResult
-        } else if (data instanceof WeiboUserInfoResult) {
-            //TODO handle the WeiboUserInfoResult
-        } else if (data instanceof Throwable) {
-            //TODO handle the Throwable
-        }
+    T data = event.getData();
+    if (data instanceof Void) {
+        log.d(TAG, "some exception uncatched.");
+        return;
+    }
+    if (data instanceof QqAuthResult) {
+        //TODO handle the QqAuthResult
+    } else if (data instanceof WechatAuthResult) {
+        //TODO handle the WechatAuthResult
+    } else if (data instanceof WeiboAuthResult) {
+        //TODO handle the WeiboAuthResult
+    } else if (data instanceof QqUserInfoResult) {
+        //TODO handle the QqUserInfoResult
+    } else if (data instanceof WechatUserInfoResult) {
+        //TODO handle the WechatUserInfoResult
+    } else if (data instanceof WeiboUserInfoResult) {
+        //TODO handle the WeiboUserInfoResult
+    } else if (data instanceof Throwable) {
+        //TODO handle the Throwable
+    }
         log.d(TAG, event.toString());
     } else if (event.isCancel()) {
         log.d(TAG, "something cancel");
@@ -159,21 +159,21 @@ supported in the library. If these styles don't match the requirement, just buil
 
 ```java
 public class CustomStyle extends BaseStyle {
-	public CustomStyle(boolean corner) {
-	    super(corner);
-	}
-	
-	@NotNull
-	@Override
-	public String TAG() {
-	    return "Custom";
-	}
-	
-	@NotNull
-	@Override
-	public BaseShareDialog getDialog(@NotNull ShareConfig config) {
-	    return BaseShareDialog.wrap(config, CustomShareDialog.class);
-	}
+    public CustomStyle(boolean corner) {
+        super(corner);
+    }
+    
+    @NotNull
+    @Override
+    public String TAG() {
+        return "Custom";
+    }
+    
+    @NotNull
+    @Override
+    public BaseShareDialog getDialog(@NotNull ShareConfig config) {
+        return BaseShareDialog.wrap(config, CustomShareDialog.class);
+    }
 }
 
 
