@@ -9,7 +9,7 @@ with Gradle:
 ```groovy
 dependencies {
 	compile 'com.neilzheng:LoginShare:0.1.0'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 ```
 
