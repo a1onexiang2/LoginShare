@@ -85,26 +85,26 @@ protected void onDestroy() {
 @Subscribe(threadMode = ThreadMode.MAIN)
 public <T> void onEvent(final AuthEvent<T> event) {
     if (event.isSuccess()) {
-    T data = event.getData();
-    if (data instanceof Void) {
-        log.d(TAG, "some exception uncatched.");
-        return;
-    }
-    if (data instanceof QqAuthResult) {
-        //TODO handle the QqAuthResult
-    } else if (data instanceof WechatAuthResult) {
-        //TODO handle the WechatAuthResult
-    } else if (data instanceof WeiboAuthResult) {
-        //TODO handle the WeiboAuthResult
-    } else if (data instanceof QqUserInfoResult) {
-        //TODO handle the QqUserInfoResult
-    } else if (data instanceof WechatUserInfoResult) {
-        //TODO handle the WechatUserInfoResult
-    } else if (data instanceof WeiboUserInfoResult) {
-        //TODO handle the WeiboUserInfoResult
-    } else if (data instanceof Throwable) {
-        //TODO handle the Throwable
-    }
+        T data = event.getData();
+        if (data instanceof Void) {
+            log.d(TAG, "some exception uncatched.");
+            return;
+        }
+        if (data instanceof QqAuthResult) {
+            //TODO handle the QqAuthResult
+        } else if (data instanceof WechatAuthResult) {
+            //TODO handle the WechatAuthResult
+        } else if (data instanceof WeiboAuthResult) {
+            //TODO handle the WeiboAuthResult
+        } else if (data instanceof QqUserInfoResult) {
+            //TODO handle the QqUserInfoResult
+        } else if (data instanceof WechatUserInfoResult) {
+            //TODO handle the WechatUserInfoResult
+        } else if (data instanceof WeiboUserInfoResult) {
+            //TODO handle the WeiboUserInfoResult
+        } else if (data instanceof Throwable) {
+            //TODO handle the Throwable
+        }
         log.d(TAG, event.toString());
     } else if (event.isCancel()) {
         log.d(TAG, "something cancel");
