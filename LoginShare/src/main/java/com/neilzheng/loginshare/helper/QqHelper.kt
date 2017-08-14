@@ -39,7 +39,12 @@ internal class QqHelper private constructor() : BaseHelper() {
         fun get(): QqHelper = Inner.instance
 
         fun isSsoAvailable(context: Context = LoginShare.appContext): Boolean {
-            return SystemUtils.checkMobileQQ(context)
+            if (Util.isTablet(context) && SystemUtils.getAppVersionName(context, "com.tencent.minihd.qq") != null) {
+                return true
+            } else {
+                return SystemUtils.getAppVersionName(context, "com.tencent.mobileqq") != null
+                        && SystemUtils.checkMobileQQ(context)
+            }
         }
 
         fun isShareAvailable(context: Context = LoginShare.appContext): Boolean {
