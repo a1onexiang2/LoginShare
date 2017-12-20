@@ -5,6 +5,10 @@ package com.neilzheng.loginshare.share
  */
 class ShareConfig : java.io.Serializable {
 
+    companion object {
+        @JvmStatic val serialVersionUID = 42L;
+    }
+
     lateinit var shareContent: ShareContent
     var shareStyle: BaseStyle = BottomStyle()
     val platformList: ArrayList<SharePlatform> = arrayListOf()

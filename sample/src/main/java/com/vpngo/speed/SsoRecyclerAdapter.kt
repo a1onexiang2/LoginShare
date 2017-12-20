@@ -40,7 +40,7 @@ class SsoRecyclerAdapter(val list: Array<String>) : RecyclerView.Adapter<BaseVie
     }
 
     class SsoViewHolder(view: View) : BaseViewHolder(view) {
-        var button: AppCompatButton = view.findViewById(R.id.button) as AppCompatButton
+        var button= view.findViewById<AppCompatButton>(R.id.button)
     }
 
 }

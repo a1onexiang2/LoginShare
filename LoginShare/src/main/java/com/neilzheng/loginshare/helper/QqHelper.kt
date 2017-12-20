@@ -3,6 +3,7 @@ package com.neilzheng.loginshare.helper
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import com.neilzheng.loginshare.LoginShare
 import com.neilzheng.loginshare.share.PlatformConfig
@@ -39,16 +40,39 @@ internal class QqHelper private constructor() : BaseHelper() {
         fun get(): QqHelper = Inner.instance
 
         fun isSsoAvailable(context: Context = LoginShare.appContext): Boolean {
-            if (Util.isTablet(context) && SystemUtils.getAppVersionName(context, "com.tencent.minihd.qq") != null) {
+            if (Util.isTablet(context) && getAppVersionName(context, "com.tencent.minihd.qq") != null) {
                 return true
             } else {
-                return SystemUtils.getAppVersionName(context, "com.tencent.mobileqq") != null
-                        && SystemUtils.checkMobileQQ(context)
+                return getAppVersionName(context, "com.tencent.mobileqq") != null
+                        && checkMobileQq(context)
             }
         }
 
         fun isShareAvailable(context: Context = LoginShare.appContext): Boolean {
-            return SystemUtils.checkMobileQQ(context)
+            return checkMobileQq(context)
+        }
+
+
+        fun getAppVersionName(context: Context, appName: String): String? {
+            val pm = context.packageManager
+            try {
+                val packageInfo = pm.getPackageInfo(appName, PackageManager.GET_SIGNATURES)
+                return packageInfo.versionName
+            } catch (ignored: PackageManager.NameNotFoundException) {
+            }
+            return null
+        }
+
+        fun checkMobileQq(context: Context): Boolean {
+            val versionName = getAppVersionName(context, "com.tencent.mobileqq") ?: return false
+            try {
+                val versions = versionName.split("\\.".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()
+                val main = Integer.parseInt(versions[0])
+                val inner = Integer.parseInt(versions[1])
+                return main > 4 || main == 4 && inner >= 1
+            } catch (ignored: Exception) {
+            }
+            return false
         }
     }
 

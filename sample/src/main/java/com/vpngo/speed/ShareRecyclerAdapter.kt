@@ -46,7 +46,7 @@ class ShareRecyclerAdapter(val list: Array<SharePlatform>) : RecyclerView.Adapte
     }
 
     class ShareViewHolder(view: View) : BaseViewHolder(view) {
-        var checkbox: AppCompatCheckBox = view.findViewById(R.id.checkbox) as AppCompatCheckBox
+        var checkbox = view.findViewById<AppCompatCheckBox>(R.id.checkbox)
     }
 
 }

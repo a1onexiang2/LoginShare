@@ -63,7 +63,7 @@ class ShareRecyclerAdapter(val list: ArrayList<SharePlatform>, val showIcon: Boo
     }
 
     class SsoViewHolder(view: View) : BaseViewHolder(view) {
-        var text = view.findViewById(R.id.text) as AppCompatTextView
+        var text = view.findViewById<AppCompatTextView>(R.id.text)
     }
 
 }
